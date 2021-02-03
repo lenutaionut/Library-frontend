@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h2>Cart</h2>
+        </div>
+        <div class="card-body">
+            <table class=" table">
+                <tbody>
+                    <tr *ngFor='let item of items'>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.author }}</td>
+                        <td>{{ item.price }} lei</td>
+                        <td><button type=button class="btn btn-outline-primary"
+                                (click)="buyProduct(item.bookId); deleteItem(item);"> Buy
+                            </button></td>
+                        <td><button type=button class="btn btn-outline-danger" (click)="deleteItem(item);"> Remove
+                            </button></td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td> <button type=button class="btn btn-danger" (click)="clearCart()">Empty
+                                cart</button>
+                        </td>
+
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

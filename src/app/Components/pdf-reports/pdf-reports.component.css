@@ -1,0 +1,11 @@
+.container{
+    width: 50%;
+    padding-top: 20px;
+    margin: 0 20px;
+    font-size: 16px;
+    float:left;
+}
+
+th{
+    color:#52063b;
+}

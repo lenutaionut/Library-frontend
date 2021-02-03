@@ -1,0 +1,72 @@
+<form [formGroup]="bookSaveForm">
+    <div class=container>
+        <div>
+            <h3>Add new book</h3>
+            <br>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input [(ngModel)]="title" class="input-form form-control" type="text" id="title"
+                    formControlName="bookTitle" placeholder="Enter the title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input [(ngModel)]="author" class="input-form form-control" type="text" id="author"
+                    formControlName="bookAuthor" placeholder="Enter the author" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input [(ngModel)]="price" class="input-form form-control" type="text" id="price"
+                    formControlName="bookPrice" placeholder="Enter the price" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pieces">Pieces</label>
+                <input [(ngModel)]="pieces" class="input-form form-control" type="text" id="pieces"
+                    formControlName="bookNumber" placeholder="Enter the number of books" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customFile">Image</label>
+                <input class="upload" type="file" accept=".jpg,.jpef,.png,.gif" id="customFile"
+                    (change)="uploadImage($event)" formControlName="bookImage" required>
+                <div class="file-validation">{{wrongImageFormat}}</div>
+            </div>
+
+            <div class="alert-msg">
+                <div style="color: red; font-size: 16px">
+                    {{emptyData}}
+                </div>
+                <div *ngIf="successMessage" class="alert alert-success" role="alert">
+                    <strong>Well done!</strong> {{ successMessage }}
+                </div>
+                <div *ngIf="failMessage" class="alert alert-danger" role="alert">
+                    <strong>Uups!</strong> {{ failMessage }}
+                </div>
+            </div>
+
+            <button type="submit" class="bt btn btn-outline-success" (click)="checkData()">Add book</button>
+        </div>
+
+        <div class="input-group">
+            <hr>
+            <h3>Or upload an excel file</h3>
+            <br>
+            <input class="upload" type="file" accept=".xls, .xlsx" (change)="uploadExcelFile($event)"
+                formControlName="excelFileForm">
+           
+            <div class="file-validation">{{wrongFileFormat}} </div>
+            <div class="excel-msg">
+                <div *ngIf="excelMessage" class="alert alert-primary" role="alert">
+                    {{ excelMessage }}
+                </div>
+                <div *ngIf="failExcelMessage" class="alert alert-danger" role="alert">
+                    {{ failExcelMessage }}
+                </div>
+            </div>
+
+            <button type="submit" class="bt btn btn-outline-success" (click)="sendExcelFile()">Add file</button>
+        </div>
+    </div>
+</form>

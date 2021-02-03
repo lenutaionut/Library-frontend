@@ -1,0 +1,54 @@
+<div class=container>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Book</th>
+        <th>Price</th>
+        <th>Pieces</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let book of books'>
+        <td>
+          <img [src]="imageFiles.get(book.bookId)" alt="{{book.title}}">
+        </td>
+        <td>
+          <p>{{ book.title }}</p>
+          <p>{{ book.author }}</p>
+        </td>
+        <td>{{ book.price }}</td>
+        <td>{{ book.pieces }}</td>
+        <td *ngIf="book.status == Status.AVAILABLE" class="text-success"><strong>{{ book.status }}</strong></td>
+        <td *ngIf="book.status == Status.SOLD || book.status == Status.BORROWED" class="text-danger">
+          <strong>UNAVAILABLE</strong>
+        </td>
+        <td><button type="button" [disabled]="book.pieces ==0" class="b-btn btn btn-outline-primary"
+            (click)="borrowBook(book.bookId)">Borrow
+          </button></td>
+        <td><button type="button" [disabled]="book.pieces ==0" class="b-btn btn btn-outline-danger"
+            (click)="addToCart(book)">Add to cart </button></td>
+      </tr>
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <p><a href="http://localhost:8070/books/export" style="color:green;">
+              <i class="fa fa-file-excel-o" aria-hidden="true"></i> Export xls
+            </a></p>
+          <p><a href="http://localhost:8070/books/report" style="color:rgb(211, 23, 23);">
+            <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Export pdf
+            </a></p>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

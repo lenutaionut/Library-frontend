@@ -1,0 +1,64 @@
+label {
+    font-size: 16px;
+}
+
+h3{
+    color:#52063b;
+}
+
+.bt {
+    width: 20%;
+    padding: 10px 0px;
+    font-size: 16px;
+    float: right;
+}
+
+.container {
+    width: 50%;
+    padding-top: 100px;
+    font-size: 14px;
+}
+
+.input-form {
+    width: 100%;
+    padding: 25px;
+    display: block;
+    border: none;
+    font-size: 16px;
+    background: #f1f1f1;
+}
+
+.input-group{
+    width: 100%;
+    padding: 30px 0px;
+    font-size: 16px;
+    float: left;
+    display: block;
+}
+
+.upload{
+    font-style: italic;
+}
+
+#customFile{
+    width: auto;
+    font-size: 16px;
+}
+
+#customFile:hover{
+    cursor: pointer;
+}
+
+.file-validation{
+    color: red;
+    font-size: 14px;
+}
+
+.alert-msg{
+    width: 100%;
+    border: 10px;
+}
+
+.excel-msg{
+    margin: 10px 0px;
+}

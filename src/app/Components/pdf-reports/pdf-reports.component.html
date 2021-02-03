@@ -1,0 +1,22 @@
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>FILE NAME</th>
+                <th>GO TO FILE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let report of reports; let i = index">
+                <td>{{i}}</td>
+                <td>{{report.name}}</td>
+                <td (click)="selectReport(report)"> <a [routerLink]="['/reports', report.reportId]"> Access file</a>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

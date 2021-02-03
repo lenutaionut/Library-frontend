@@ -1,0 +1,42 @@
+.container{
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+th {
+    color: #52063b;
+    font-size: 18px;
+    vertical-align:middle;
+}
+
+img{
+    width: 70px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.b-btn{
+    font-size: 14px;
+}
+
+.add-btn{
+    font-size: 16px;
+    float: right;
+    margin: 37px;
+}
+
+.cart:hover{
+    color:rgb(0, 110, 255);
+    text-decoration: none;
+}
+
+.export{
+    color: green;
+}
+
+.file-validation{
+    color:red;
+}
+
+
